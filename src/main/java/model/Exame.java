@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package model;
 
 /**
@@ -9,15 +6,45 @@ package model;
  * @author Naty
  */
 public class Exame {
+    private int id;
+    private String nome;
+    private int id_consulta;
 
-    private String descExame;
+    public Exame(int id, String nome, int id_consulta) {
+        this.id = id;
+        this.nome = nome;
+        this.id_consulta = id_consulta;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getId_consulta() {
+        return id_consulta;
+    }
+
+    public void setId_consulta(int id_consulta) {
+        this.id_consulta = id_consulta;
+    }
     
-    public String getDescExame() {
-        return descExame;
-    }
-
-    public void setDescExame(String descExame) {
-        this.descExame = descExame;
-    }
+    @Override
+    public String toString() {        
+        String desc = "Cliente{" + "nome=" + nome + ", id_consulta=" + id_consulta + '}';
+        return desc;
+    }    
+    
     
 }

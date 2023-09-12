@@ -93,7 +93,7 @@ public class EspecieDAO extends DAO {
             PreparedStatement stmt;
             stmt = DAO.getConnection().prepareStatement("UPDATE especie SET nome=? WHERE id=?");
             stmt.setString(1, especie.getNome());
-            stmt.setInt(6, especie.getId());
+            stmt.setInt(2, especie.getId());
             executeUpdate(stmt);
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());

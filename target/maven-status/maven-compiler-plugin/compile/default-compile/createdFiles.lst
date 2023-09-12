@@ -1,5 +1,5 @@
 model\Consulta.class
-model\Veterinario.class
+model\ConsultaDAO.class
 model\Animal.class
 model\Tratamento.class
 view\Tela.class
@@ -8,6 +8,9 @@ model\Main.class
 model\Cliente.class
 model\Especie.class
 model\EspecieDAO.class
+model\ExameDAO.class
+model\Vet.class
+model\VetDAO.class
 view\Tela$1.class
 model\AnimalDAO.class
 model\Exame.class
