@@ -1,5 +1,5 @@
 
-package naty.projetott001;
+package model;
 
 /**
  *
