@@ -1,37 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package model;
 
-/**
- *
- * @author Naty
- */
 public class Animal {
-
     private int id;
     private String nome;
     private int anoNasc;
     private String sexo;
-    private int id_especie;
-    private int id_cliente;
+    private int idEspecie;
+    private int idCliente;
 
-    public Animal(int id, String nome, int anoNasc, String sexo, int id_especie, int id_cliente) {
+    public Animal(int id, String nome, int anoNasc, String sexo, int idEspecie, int idCliente) {
         this.id = id;
         this.nome = nome;
         this.anoNasc = anoNasc;
         this.sexo = sexo;
-        this.id_especie = id_especie;
-        this.id_cliente = id_cliente;
+        this.idEspecie = idEspecie;
+        this.idCliente = idCliente;
     }
-    
+
     public int getId() {
         return id;
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {
@@ -54,27 +45,28 @@ public class Animal {
         this.sexo = sexo;
     }
 
-    public int getId_especie() {
-        return id_especie;
+    public int getIdEspecie() {
+        return idEspecie;
     }
 
-    public void setId_especie(int id_especie) {
-        this.id_especie = id_especie;
+    public void setIdEspecie(int idEspecie) {
+        this.idEspecie = idEspecie;
     }
 
-    public int getId_cliente() {
-        return id_cliente;
+    public int getIdCliente() {
+        return idCliente;
     }
 
-    public void setId_cliente(int id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setIdCliente(int idCliente) {
+        this.idCliente = idCliente;
     }
 
     @Override
-    public String toString() {        
-        String desc = "Animal{" + "nome=" + nome + ", anoNasc=" + anoNasc + ", sexo=" + sexo + ", id_especie=" + id_especie+ ", id_cliente=" + id_cliente + '}';
-        return desc;
-    }  
+    public String toString() {
+        return "Animal{" + "id=" + id + ", nome=" + nome + ", anoNasc=" + anoNasc + ", sexo=" + sexo + ", idEspecie=" + idEspecie + ", idCliente=" + idCliente + '}';
+    }
     
-  
+    
+    
+    
 }

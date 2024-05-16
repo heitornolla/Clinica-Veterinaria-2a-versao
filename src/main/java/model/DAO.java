@@ -1,19 +1,18 @@
-
 package model;
 
+// DAO Implementation for H2 Database.
 /**
- *
- * @author Naty
+ * @author Plinio Vilela
+ * @date 16 de Agosto de 2021
  */
-
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public abstract class DAO {
-     public static final String DBURL = "jdbc:h2:./veterinaria.db";
-    private static Connection con;
+    public static final String DBURL = "jdbc:h2:./vet2023";
+    protected static Connection con;
     protected static SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
     // Connect to SQLite
@@ -114,7 +113,7 @@ public abstract class DAO {
                     + "comentario VARCHAR, \n"
                     + "id_animal INTEGER, \n"
                     + "id_vet INTEGER, \n"
-                    + "id_tratamento INTEGER, \n"
+                    //+ "id_tratamento INTEGER, \n"
                     + "terminado INTEGER); \n");
             executeUpdate(stmt);            
              // Table exam:

@@ -1,43 +1,65 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-/**
- *
- * @author Naty
- */
-public class Consulta {
 
+public class Consulta {
     private int id;
     private Calendar data;
     private String horario;
     private String comentario;
-    private int id_animal;
-    private int id_vet;
-    private int id_tratamento;
-    private int terminado;
-    
-    public Consulta(int id, Calendar data, String horario, String comentario, int id_animal, int id_vet, int id_tratamento, int terminado) {
+    private Integer idAnimal;
+    private Integer idVeterinario;
+    //private Integer idTratamento;
+    private Integer terminado;
+    /*private String Animal;
+    private String Vet;*/
+
+    public Consulta(int id, Calendar data, String horario, String comentario, int idAnimal, int idVeterinario, int terminado/*, String Animal, String Vet*/) {
         this.id = id;
         this.data = data;
         this.horario = horario;
         this.comentario = comentario;
-        this.id_animal = id_animal;
-        this.id_vet = id_vet;
-        this.id_tratamento = id_tratamento;
+        this.idAnimal = idAnimal;
+        this.idVeterinario = idVeterinario;
         this.terminado = terminado;
+        /*this.Animal = Animal;
+        this.Vet = Vet;*/
     }
+
+    /*public String getAnimal() {
+        return Animal;
+    }
+
+    public void setAnimal(String Animal) {
+        this.Animal = Animal;
+    }
+
+    public String getVet() {
+        return Vet;
+    }
+
+    public void setVet(String Vet) {
+        this.Vet = Vet;
+    }*/
 
     public int getId() {
         return id;
     }
 
-    public Calendar getData() {
-        return data;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getData() {
+        DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+        return df.format(data.getTime());
+    }
+    
+    public Calendar getCalendarDate(){
+        return this.data;
     }
 
     public void setData(Calendar data) {
@@ -60,41 +82,40 @@ public class Consulta {
         this.comentario = comentario;
     }
 
-    public int getId_animal() {
-        return id_animal;
+    public Integer getIdAnimal() {
+        return idAnimal;
     }
 
-    public void setId_animal(int id_animal) {
-        this.id_animal = id_animal;
+    public void setIdAnimal(int idAnimal) {
+        this.idAnimal = idAnimal;
     }
 
-    public int getId_vet() {
-        return id_vet;
+    public Integer getIdVeterinario() {
+        return idVeterinario;
     }
 
-    public void setId_vet(int id_vet) {
-        this.id_vet = id_vet;
+    public void setIdVeterinario(int idVeterinario) {
+        this.idVeterinario = idVeterinario;
     }
 
-    public int getId_tratamento() {
-        return id_tratamento;
+    /*public Integer getIdTratamento() {
+        return idTratamento;
     }
 
-    public void setId_tratamento(int id_tratamento) {
-        this.id_tratamento = id_tratamento;
-    }
+    public void setIdTratamento(int idTratamento) {
+        this.idTratamento = idTratamento;
+    }*/
 
-    public int getTerminado() {
+    public Integer getTerminado() {
         return terminado;
     }
 
     public void setTerminado(int terminado) {
         this.terminado = terminado;
     }
-    
+
     @Override
-    public String toString() {        
-        String desc = "Consulta{" + "id=" + id + ", data=" + data + ", horario=" + horario + ", comentario=" + comentario + ", id_animal" + id_animal + ", id_vet=" + id_vet + ", id_tratamento=" + id_tratamento + ", terminado=" + terminado + '}';
-        return desc;
+    public String toString() {
+        return "Consulta{" + "id=" + id + ", data=" + data + ", horario=" + horario + ", comentario=" + comentario + ", idAnimal=" + idAnimal + ", idVeterinario=" + idVeterinario + ",  terminado=" + terminado + '}';
     }    
 }

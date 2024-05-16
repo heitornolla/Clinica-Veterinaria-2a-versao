@@ -1,10 +1,4 @@
-
 package model;
-
-/**
- *
- * @author Naty
- */
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,12 +16,10 @@ public class ClienteDAO extends DAO {
         createTable();
     }
 
-    // Singleton
     public static ClienteDAO getInstance() {
         return (instance==null?(instance = new ClienteDAO()):instance);
     }
 
-// CRUD    
     public Cliente create(String nome, String end, String cep, String email, String telefone) {
         try {
             PreparedStatement stmt;
@@ -44,7 +36,6 @@ public class ClienteDAO extends DAO {
         return this.retrieveById(lastId("cliente","id"));
     }
     
-
     private Cliente buildObject(ResultSet rs) {
         Cliente cliente = null;
         try {
@@ -55,7 +46,6 @@ public class ClienteDAO extends DAO {
         return cliente;
     }
 
-    // Generic Retriever
     public List retrieve(String query) {
         List<Cliente> clientes = new ArrayList();
         ResultSet rs = getResultSet(query);
@@ -69,28 +59,33 @@ public class ClienteDAO extends DAO {
         return clientes;
     }
     
-    // RetrieveAll
     public List retrieveAll() {
         return this.retrieve("SELECT * FROM cliente");
     }
     
-    // RetrieveLast
     public List retrieveLast(){
         return this.retrieve("SELECT * FROM cliente WHERE id = " + lastId("cliente","id"));
     }
 
-    // RetrieveById
+    public Cliente retrieveByTelefone(int telefone) {
+        List<Cliente> clientes = this.retrieve("SELECT * FROM cliente WHERE telefone = " + telefone);
+        return (clientes.isEmpty()?null:clientes.get(0));
+    }
+    
     public Cliente retrieveById(int id) {
         List<Cliente> clientes = this.retrieve("SELECT * FROM cliente WHERE id = " + id);
         return (clientes.isEmpty()?null:clientes.get(0));
     }
+    
+    public Cliente retrieveByName(String nome) {
+        List<Cliente> clientes = this.retrieve("SELECT * FROM cliente WHERE nome = " + nome);
+        return (clientes.isEmpty()?null:clientes.get(0));
+    }
 
-    // RetrieveBySimilarName
     public List retrieveBySimilarName(String nome) {
         return this.retrieve("SELECT * FROM cliente WHERE nome LIKE '%" + nome + "%'");
     }    
         
-    // Updade
     public void update(Cliente cliente) {
         try {
             PreparedStatement stmt;
